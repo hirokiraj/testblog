@@ -41,7 +41,7 @@ RSpec.describe Author, type: :model do
     let(:author) { create(:author) }
 
     it 'should return authors fullname' do
-      expect(author.fullname).to eq('Andrzej Tester')
+      expect(author.fullname).to eq("#{author.name} #{author.surname}")
     end
   end
 end
