@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'home#welcome'
   # get '/authors', to: 'authors#index', as: :authors
   # get '/authors/:id', to: 'authors#show', as: :author

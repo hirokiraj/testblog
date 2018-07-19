@@ -1,10 +1,13 @@
 class AuthorsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @authors = Author.all
   end
 
   def show
     @author = Author.find(params[:id])
+    AuthorMailer.hello_mail(@author, current_user).deliver_later
   end
 
   def new

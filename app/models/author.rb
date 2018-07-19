@@ -5,6 +5,7 @@ class Author < ActiveRecord::Base
 
   scope :old, -> { where('age > 30') }
   scope :young, -> { where('age < 20') }
+  scope :oneandonly, -> { find_by(name: 'Bob') }
 
   before_create :default_age
 
