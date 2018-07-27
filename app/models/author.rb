@@ -15,6 +15,10 @@ class Author < ActiveRecord::Base
     "#{name} #{surname}"
   end
 
+  def self.delete_old_authors
+    Author.old.destroy_all
+  end
+
   private
 
   def default_age
