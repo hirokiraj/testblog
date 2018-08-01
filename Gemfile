@@ -80,3 +80,4 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'whenever', require: false
 
 gem 'sidekiq'
+gem 'omniauth-facebook'
