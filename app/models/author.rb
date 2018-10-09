@@ -9,7 +9,7 @@ class Author < ActiveRecord::Base
 
   before_create :default_age
 
-  validates :name, :surname, presence: true
+  validates :name, :surname, :email, presence: true
 
   def fullname
     "#{name} #{surname}"

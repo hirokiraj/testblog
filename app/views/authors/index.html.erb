@@ -1,13 +1,26 @@
 <h1>List of all authors</h1>
 
-<ul>
-  <% @authors.each do |author| %>
-    <li>
-      <%= link_to author.fullname, author_path(id: author.id) %>
-      <%= link_to 'Edit', edit_author_path(id: author.id) %>
-      <%= link_to 'Destroy', author_path(id: author.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </li>
-  <% end %>
-</ul>
-<hr />
-<%= link_to 'New author', new_author_path %>
+<table class='table table-striped'>
+  <thead class='thead-light'>
+    <tr>
+      <th scope="col">Full name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @authors.each do |author| %>
+      <tr>
+        <td><%= author.fullname %></td>
+        <td><%= author.email %></td>
+        <td>
+          <%= link_to 'Show', author_path(id: author.id), class: 'btn btn-xs btn-primary' %>
+          <%= link_to 'Edit', edit_author_path(id: author.id), class: 'btn btn-xs btn-info' %>
+          <%= link_to 'Destroy', author_path(id: author.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</hr>
+<%= link_to 'New author', new_author_path, class: 'btn btn-success' %>

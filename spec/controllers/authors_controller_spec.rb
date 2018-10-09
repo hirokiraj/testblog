@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe AuthorsController, type: :controller do
+  let(:user) { create(:user) }
+  before { sign_in(user) }
+
   describe '#index' do
     subject { get :index }
 

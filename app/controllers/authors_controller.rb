@@ -7,7 +7,6 @@ class AuthorsController < ApplicationController
 
   def show
     @author = Author.find(params[:id])
-    AuthorMailer.hello_mail(@author, current_user).deliver_later
   end
 
   def new
@@ -48,6 +47,6 @@ class AuthorsController < ApplicationController
   private
 
   def author_params
-    params.require(:author).permit(:name, :surname, :age)
+    params.require(:author).permit(:name, :surname, :age, :email)
   end
 end
